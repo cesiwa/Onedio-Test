@@ -1,10 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-
 const Card = () => {
-
-
   return (
     <>
       <section className="bg-gray-2 pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px]">
@@ -16,19 +13,19 @@ const Card = () => {
               titleHref="/#"
               btnHref="/#"
               CardDescription="Lorem ipsum dolor sit amet pretium consectetur adipiscing elit. Lorem consectetur adipiscing elit."
-              Button="View Details"
+              id="1"
             />
             <SingleCard
               image="https://i.ibb.co/0nbbWM9/image-02-1.jpg"
               CardTitle="Creative Card Component designs graphic elements"
               CardDescription="Lorem ipsum dolor sit amet pretium consectetur adipiscing elit. Lorem consectetur adipiscing elit."
-              Button="View Details"
+              id="2"
             />
             <SingleCard
               image="https://i.ibb.co/dL9fH7N/image-03-1.jpg"
               CardTitle="The ultimate UX and UI guide to card design"
               CardDescription="Lorem ipsum dolor sit amet pretium consectetur adipiscing elit. Lorem consectetur adipiscing elit."
-              Button="View Details"
+              id="3"
             />
           </div>
         </div>
@@ -39,18 +36,11 @@ const Card = () => {
 
 export default Card;
 
-const SingleCard = ({
-  image,
-  CardDescription,
-  CardTitle,
-  titleHref,
-  btnHref,
-}) => {
-
+const SingleCard = ({ image, CardDescription, CardTitle, titleHref, id }) => {
   let navigate = useNavigate();
 
   const routeChange = () => {
-    let path = `question`;
+    let path = `question/${id}`;
     navigate(path);
   };
   return (
@@ -71,14 +61,12 @@ const SingleCard = ({
             {CardDescription}
           </p>
 
-       
-            <button
-              onClick={routeChange}
-              className="inline-block rounded-full border border-gray-3 px-7 py-2 text-base font-medium text-body-color transition hover:border-primary hover:bg-primary hover:text-white dark:border-dark-3 dark:text-dark-6"
-            >
-              Teste Başla
-            </button>
-  
+          <button
+            onClick={routeChange}
+            className="inline-block rounded-full border border-gray-3 px-7 py-2 text-base font-medium text-body-color transition hover:border-primary hover:bg-primary hover:text-white dark:border-dark-3 dark:text-dark-6"
+          >
+            Teste Başla
+          </button>
         </div>
       </div>
       {/*  */}
