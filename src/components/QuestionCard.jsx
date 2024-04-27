@@ -13,6 +13,7 @@ function QuestionCard() {
 
     navigate(path, { state: currentPoints });
   };
+
   //global state kullan zustand veya redux öğren ama zustand bu proje için daha iyi
   // src altına store adında bir klasör oluştur ve içine index.js adında bir dosya oluştur
   // src/store/index.js
